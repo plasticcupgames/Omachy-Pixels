@@ -14,7 +14,6 @@ not reuse in other games. Silkscreen retains its OFL license.
 ```bash
 python3 tools/check-release.py --publish
 node tests/world.test.cjs
-bash -n install-plugin omachy-pixels
 omarchy plugin validate .
 gh auth login
 git add .
