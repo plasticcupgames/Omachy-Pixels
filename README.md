@@ -85,10 +85,9 @@ Removal uses Omarchy's confirmation flow and removes only the plugin checkout an
 python3 tools/check-release.py
 node tests/world.test.cjs
 omarchy plugin validate .
-bash -n install-plugin omachy-pixels
 ```
 
-To install a fresh local development copy, run `./install-plugin`. It refuses to overwrite an existing destination. A Git-managed installation should be updated with Omarchy's update command. If hot reload keeps old QML components cached, `omarchy restart shell` applies the new code; this briefly restarts the bar and other shell services.
+For development, work from a normal Git checkout and use Omarchy's built-in plugin commands for installation, validation, updates, and removal. If hot reload keeps old QML components cached, `omarchy restart shell` applies the new code; this briefly restarts the bar and other shell services.
 
 Do not run the old `local.omachy-pixels` development plugin alongside the published ID: both use the `pixels` IPC target and shared preferences. Disable the old plugin before enabling this release.
 
