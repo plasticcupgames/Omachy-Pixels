@@ -1,4 +1,4 @@
-[Plugin]: # Omachy Pixels
+[Plugin]: Omachy Pixels
 
 An offline pixel-art space battle for the Omarchy desktop. Friendly ships and enemies fly patrols, trade shots, explode, and collect coins. Bosses arrive in shuffled rounds. A ship icon in the bar opens a black, yellow, and white settings panel with the bundled Silkscreen pixel font.
 
