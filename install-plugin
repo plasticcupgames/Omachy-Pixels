@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Explicit local development install. Marketplace installs need no setup hook.
+set -euo pipefail
+project_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+plugin_id="$(jq -er '.id' "$project_dir/manifest.json")"
+omarchy plugin validate "$project_dir"
+destination="${XDG_CONFIG_HOME:-$HOME/.config}/omarchy/plugins/$plugin_id"
+if [[ -e "$destination" ]]; then
+    echo "Already installed at $destination. Use omarchy plugin update $plugin_id for a Git installation, or remove the local copy first." >&2
+    exit 1
+fi
+mkdir -p "$destination/assets" "$destination/fonts" "$destination/docs"
+cp "$project_dir/"{manifest.json,Service.qml,BarWidget.qml,Battle.qml,SettingsWindow.qml,World.js,README.md,LICENSE,THIRD_PARTY.md} "$destination/"
+cp "$project_dir/assets/"*.png "$destination/assets/"
+cp "$project_dir/fonts/"* "$destination/fonts/"
+cp "$project_dir/docs/OMATE-LICENSE.txt" "$destination/docs/OMATE-LICENSE.txt"
+cp "$project_dir/assets/"{README.md,LICENSE} "$destination/assets/"
+omarchy-shell shell rescanPlugins
+omarchy plugin enable "$plugin_id" --section right

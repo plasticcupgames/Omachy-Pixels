@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "plasticcupgames.omachy-pixels",
+  "name": "Omachy Pixels",
+  "version": "1.0.0",
+  "description": "Pixel-art space battles with squadron formations, drifting engine trails, bosses, and desktop fleet controls.",
+  "kinds": [
+    "service",
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Omachy Pixels",
+    "description": "Ship fleet settings and monitor selection",
+    "category": "Fun",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  },
+  "author": "Tim Hyatt / Tim Hyatt Games",
+  "license": "MIT",
+  "keywords": [
+    "desktop",
+    "pixel-art",
+    "ships",
+    "games",
+    "quickshell"
+  ]
+}

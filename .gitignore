@@ -1,0 +1,16 @@
+# Local state, logs, credentials, editor files, and build output
+*.log
+*.qslog
+*.qslog.log
+*.core
+*.bak
+*.bak.*
+*~
+.env
+.env.*
+!.env.example
+.DS_Store
+__pycache__/
+node_modules/
+.local/
+dist/

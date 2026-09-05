@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+case "${1:-settings}" in
+ start) exec omarchy plugin enable plasticcupgames.omachy-pixels ;;
+ stop) exec omarchy plugin disable plasticcupgames.omachy-pixels ;;
+ pause|toggle|boss|reset|status|settings|show) exec omarchy-shell pixels "$1" ;;
+ fps|screen|setShipSize|setEnemySize|setFrequency|setArea|setEnabled) exec omarchy-shell pixels "$1" "${2:?Supply a value}" ;;
+ *) echo "Usage: $0 {start|stop|settings|pause|toggle|boss|reset|status|show|fps VALUE|screen NAME|setShipSize VALUE|setEnemySize VALUE|setFrequency VALUE|setArea VALUE}"; exit 2 ;;
+esac
